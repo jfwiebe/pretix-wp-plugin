@@ -20,6 +20,6 @@ Of course, you have to adjust the URLs to your installation. The urls can be fou
 Third, insert the ticketshop somewhere on your page by typing `[pretix-widget]` into an article. The plugin will replace the placeholder with the ticketshop.
 
 # Contributing
-Feel free to contribute improvements, bug-reports or bugfixes by creating an issue. If you have any further questions, please do not hesitate to ask!
+Feel free to contribute improvements, bug-reports or bugfixes by creating an issue and/or a pull-request. If you have any further questions, please do not hesitate to ask!
 # License
 This code is licensed under the Apache 2.0 License, please see the LICENSE file for the full license text.
