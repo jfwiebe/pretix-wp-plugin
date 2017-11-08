@@ -13,11 +13,10 @@ git clone https://github.com/jfwiebe/pretix-wp-plugin.git
 Second, enable the `Wordpress Pretix Integration` plugin, which can now be found in your WordPress Admin Panel. Now, under "Settings -> Pretix Settings", set up the URLs of your pretix installation:
 + **CSS File Link** is the link to the CSS file, e.g. `https://pretixdemo.com/demo/democon/widget/v1.css`
 + **JS File Link** is the link to the JS file, e.g. `https://pretixdemo.com/widget/v1.en.js`
-+ **Event Link** is the link to the events ticketshop, e.g. `https://pretixdemo.com/demo/democon/`
 
 Of course, you have to adjust the URLs to your installation. The urls can be found in the code snippet that pretix generates on the "Widget" tab in your event's settings.
 
-Third, insert the ticketshop somewhere on your page by typing `[pretix-widget]` into an article. The plugin will replace the placeholder with the ticketshop.
+Third, insert the ticketshop somewhere on your page by typing `[pretix-widget eventurl="https://pretixdemo.com/demo/democon/"]` into an article. The plugin will replace the placeholder with the ticketshop.
 
 # Contributing
 Feel free to contribute improvements, bug-reports or bugfixes by creating an issue and/or a pull-request. If you have any further questions, please do not hesitate to ask!

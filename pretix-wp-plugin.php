@@ -28,11 +28,9 @@ add_action( 'admin_init', 'pretix_admin_init' );
 function pretix_admin_init() {
     register_setting( 'pretix-settings-group', 'css-file-link' );
 	register_setting( 'pretix-settings-group', 'js-file-link' );
-	register_setting( 'pretix-settings-group', 'event-link' );
     add_settings_section( 'url-section', 'General Config', 'general_config_callback', 'pretix-plugin' );
     add_settings_field( 'css-file-link', 'CSS File Link', 'css_file_callback', 'pretix-plugin', 'url-section' );
 	add_settings_field( 'js-file-link', 'JS File Link', 'js_file_callback', 'pretix-plugin', 'url-section' );
-	add_settings_field( 'event-link', 'Event Link', 'event_callback', 'pretix-plugin', 'url-section' );
 }
 
 function general_config_callback() {
@@ -45,10 +43,6 @@ function css_file_callback() {
 function js_file_callback() {
     $setting = esc_attr( get_option( 'js-file-link' ) );
     echo "<input type='text' name='js-file-link' value='$setting' />";
-}
-function event_callback() {
-    $setting = esc_attr( get_option( 'event-link' ) );
-    echo "<input type='text' name='event-link' value='$setting' />";
 }
 
 // Add Admin Interface
@@ -74,12 +68,16 @@ function pretix_options_page() {
 
 // Use "pretix-widget" shortcode to be replaced by the widget code
 
-function pretix_widget() {
-   return '<pretix-widget event="'. esc_attr( get_option('event-link') ) .'"></pretix-widget>
+function pretix_widget($atts = [], $content = null, $tag = '') {
+	// handle tags
+	$atts = array_change_key_case((array)$atts, CASE_LOWER);
+	$pretix_atts = shortcode_atts(['eventurl' => 'https://pretix.eu/demo/democon/'], $atts, $tag);
+	
+   return '<pretix-widget event="'. $pretix_atts['eventurl'] .'"></pretix-widget>
 <noscript>
    <div class="pretix-widget">
         <div class="pretix-widget-info-message">
-            JavaScript is disabled. Please head over to our ticketing system <a target="_blank" href="'. esc_attr( get_option( 'event-link' ) ) .'">to buy a ticket</a>.
+            JavaScript is disabled. Please head over to our ticketing system <a target="_blank" href="'. $pretix_atts['eventurl'] .'">to buy a ticket</a>.
         </div>
     </div>
 </noscript>';
