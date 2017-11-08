@@ -16,9 +16,9 @@ Second, enable the `Wordpress Pretix Integration` plugin, which can now be found
 
 Short notice: The CSS and JS files are used for all events, so all shops will be displayed with the color that is specified in the event of the css file and all static texts ("Add to Cart") will be in the language specified in the JS file.
 
-Of course, you have to adjust the URLs to your installation. The urls can be found in the code snippet that pretix generates on the "Widget" tab in your event's settings.
-
 Third, insert the ticketshop somewhere on your page by typing `[pretix-widget eventurl="https://pretixdemo.com/demo/democon/"]` into an article. The plugin will replace the placeholder with the ticketshop.
+
+Of course, you have to adjust the URLs to your installation. The urls can be found in the code snippet that pretix generates on the "Widget" tab in your event's settings.
 
 # Contributing
 Feel free to contribute improvements, bug-reports or bugfixes by creating an issue and/or a pull-request. If you have any further questions, please do not hesitate to ask!
