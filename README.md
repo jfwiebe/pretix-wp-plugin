@@ -18,6 +18,8 @@ Short notice: The CSS and JS files are used for all events, so all shops will be
 
 Third, insert the ticketshop somewhere on your page by typing `[pretix-widget eventurl="https://pretixdemo.com/demo/democon/"]` into an article. If you want to sell tickets for an event in a event series, you also have to specify the "subevent" tag, so the tag would look like `[pretix-widget eventurl="https://pretixdemo.com/demo/democon/" subevent=5]`. The plugin will replace the placeholder with the ticketshop.
 
+To specify a voucher code add the "voucher" tag: `[pretix-widget eventurl="https://pretixdemo.com/demo/democon/" voucher=5]`
+
 Of course, you have to adjust the URLs to your installation. The urls can be found in the code snippet that pretix generates on the "Widget" tab in your event's settings.
 
 # Contributing

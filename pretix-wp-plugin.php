@@ -71,14 +71,19 @@ function pretix_options_page() {
 function pretix_widget($atts = [], $content = null, $tag = '') {
 	// handle tags
 	$atts = array_change_key_case((array)$atts, CASE_LOWER);
-	$pretix_atts = shortcode_atts(['eventurl' => 'https://pretix.eu/demo/democon/', 'subevent' => 1], $atts, $tag);
-	
+	$pretix_atts = shortcode_atts(['eventurl' => 'https://pretix.eu/demo/democon/', 'subevent' => 1, 'voucher' => ''], $atts, $tag);
+
 	$subevent_tag = "";
 	if (isset($atts['subevent'])) {
 		$subevent_tag = ' subevent="' . $pretix_atts['subevent'] . '"';
 	}
-	
-   return '<pretix-widget event="' . $pretix_atts['eventurl'] . '"' . $subevent_tag . '></pretix-widget>
+
+	$voucher_tag = "";
+	if (isset($atts['voucher'])) {
+		$voucher_tag = ' voucher="' . $pretix_atts['voucher'] . '"';
+	}
+
+	return '<pretix-widget event="' . $pretix_atts['eventurl'] . '"' . $subevent_tag . $voucher_tag . '></pretix-widget>
 <noscript>
    <div class="pretix-widget">
         <div class="pretix-widget-info-message">
