@@ -1,5 +1,8 @@
 # pretix-wp-plugin
 Plugin to integrate a pretix ticketing system into a WordPress page
+
+### There is now an official plugin available: https://github.com/pretix/pretix-widget-wordpress
+
 ### This Plugin still in beta, please see open issues for further information!
 ## What does this plugin do?
 This software is a plugin designed for the [WordPress CMS](https://wordpress.org), which displays an [embedded pretix ticket shop](https://docs.pretix.eu/en/latest/user/events/widget.html) inline within an article.
